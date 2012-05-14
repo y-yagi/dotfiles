@@ -6,25 +6,43 @@ export LANG=ja_JP.UTF-8
 autoload colors
 colors
 
-PROMPT="%{${fg[green]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"
+#PROMPT="%{${fg[green]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"  
+PROMPT_LINE_1="%{${fg[green]}%}[%n@%m]  [ %D %T ]"
+PROMPT_LINE_2="%(!.#.$) %{${reset_colo}%}"
+PROMPT="${PROMPT_LINE_1} 
+${PROMPT_LINE_2}"
+
+
 PROMPT2="%{${fg[green]}%}%_> %{${reset_color}%}"
 SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
+#RPROMPT="%{$fg_bold[white]%}[%{$reset_color%}%{$fg[cyan]%}%~%{$reset_color%}%{$fg_bold[white]%}]%{$reset_color%}"
 
-RPROMPT="%{$fg_bold[white]%}[%{$reset_color%}%{$fg[cyan]%}%~%{$reset_color%}%{$fg_bold[white]%}]%{$reset_color%}"
 
-#
-# # パスの設定
+# パスの設定
 PATH=/usr/local/bin:/usr/bin:$PATH
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
-#
-# # 関数
+
+# 関数
 find-grep () { find . -type f -print | xargs grep -n --binary-files=without-match $@ }
-#
-# # エイリアスの設定
+
+# alias 
 alias ls='ls -G --color -a'
 alias ll='ls -ltr'
 #alias vi='vim'
-alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
+#alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"' 
+
+# git 
+alias gs="git status"
+alias gd="git diff"
+alias br="git branch"
+alias ga="git add ."
+alias gh="git help"  
+alias gc="git commit -a " 
+
+alias gl='git log --graph --decorate --pretty=format:"%ad [%cn] <c:%h t:%t p:%p> %n %Cgree
+n%d%Creset %s %n" --stat -p'
+alias gls='git log --stat --summary'
+
 #
 # # プロンプトの設定 
 #
@@ -137,23 +155,35 @@ export PATH=$PATH:$HOME/tools
 # gvim setting 
 gvim(){ /usr/bin/gvim -f "$@" & true; }
 
+# rvm
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting 
 rvm use ruby-1.9.3 
 
 
-# git 
-alias gs="git status"
-alias gd="git diff"
-alias br="git branch"
-alias ga="git add ."
-alias gh="git help"  
-alias gc="git commit -a " 
-
-alias gl='git log --graph --decorate --pretty=format:"%ad [%cn] <c:%h t:%t p:%p> %n %Cgree
-n%d%Creset %s %n" --stat -p'
-alias gls='git log --stat --summary'
- 
+# display  
 xgamma -bgamma 0.87 
+ 
 
-# Ruby 
-#alias irb=pry
+_set_env_git_current_branch() {
+  GIT_CURRENT_BRANCH=$( git branch &> /dev/null | grep '^\*' | cut -b 3- )
+}
+
+_update_rprompt () {
+  if [ "`git ls-files 2>/dev/null`" ]; then
+    RPROMPT="%{$fg_bold[white]%}[%{$reset_color%}%{$fg[cyan]%}%~%{$reset_color%}%{$fg[red]%}:$GIT_CURRENT_BRANCH%{$reset_color%}]%{$fg_bold[white]%}%{$reset_color%}"
+  else
+    RPROMPT="%{$fg_bold[white]%}[%{$reset_color%}%{$fg[cyan]%}%~%{$reset_color%}%{$fg_bold[white]%}]%{$reset_color%}"
+  fi
+} 
+  
+precmd() 
+{ 
+  _set_env_git_current_branch
+  _update_rprompt
+}
+
+chpwd()
+{
+  _set_env_git_current_branch
+  _update_rprompt
+}
