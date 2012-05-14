@@ -124,7 +124,7 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'fuenor/JpFormat.vim'   
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/neocomplcache'   
-NeoBundle 'vim-scripts/AutoComplPop'
+NeoBundle 'vim-scripts/AutoComplPop' 
 
 
 
@@ -215,7 +215,37 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q 
 
-"vnoremap y "+y  
+vnoremap y "+y  
 
 set gfn=Takaoゴシック\ 11
-set clipboard=unnamedplus
+set clipboard=unnamedplus  
+
+" IME 
+inoremap <silent> <ESC> <ESC>
+inoremap <silent> <C-[> <ESC>
+inoremap <silent> <C-j> <C-^> 
+set formatoptions+=mM
+ 
+
+" autocomplpop
+inoremap <silent> <expr> ,t
+      \ (exists('#AutoComplPopGlobalAutoCommand#InsertEnter#*')) ? "\<C-o>:AutoComplPopDisable\<CR>" : "\<C-o>:AutoComplPopEnable\<CR>"
+" {{{ Autocompletion using the TAB key
+" This function determines, wether we are on the start of the line text (then tab indents) or
+" if we want to try autocompletion
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<TAB>"
+  else
+    if pumvisible()
+      return "\<C-N>"
+    else
+      return "\<C-N>\<C-P>"
+    end
+  endif
+endfunction
+" Remap the tab key to select action with InsertTabWrapper
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+" }}} Autocompletion using the TAB key 
+
