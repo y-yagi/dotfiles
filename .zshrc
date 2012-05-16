@@ -7,8 +7,8 @@ autoload colors
 colors
 
 #PROMPT="%{${fg[green]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"  
-PROMPT_LINE_1="%{${fg[green]}%}[%n@%m]  [ %D %T ]"
-PROMPT_LINE_2="%(!.#.$) %{${reset_colo}%}"
+PROMPT_LINE_1="%{${fg[green]}%}[%n@%m]  [ %D %T ] %{${reset_color}%}"
+PROMPT_LINE_2="%{${fg[magenta]}%}%(!.#.$) %{${reset_color}%}"
 PROMPT="${PROMPT_LINE_1} 
 ${PROMPT_LINE_2}"
 
@@ -30,6 +30,7 @@ alias ls='ls -G --color -a'
 alias ll='ls -ltr'
 #alias vi='vim'
 #alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"' 
+alias c='clear'
 
 # git 
 alias gs="git status"
@@ -187,3 +188,5 @@ chpwd()
   _set_env_git_current_branch
   _update_rprompt
 }
+
+export JSTESTDRIVER_HOME=~/tool/program/javascript/jstestdriver
