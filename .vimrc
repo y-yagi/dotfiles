@@ -3,7 +3,9 @@ set softtabstop=2
 set shiftwidth=2 
 
 set fileencoding=UTF-8
-set fileformat=unix  
+set fileformat=unix   
+
+set nu
 
 scriptencoding utf-8
 
@@ -13,8 +15,7 @@ set backupdir=$HOME/vimbackup
 set directory=$HOME/vimbackup
 "set dictionary=$HOME/vimfiles/dict/php.dict
 set incsearch
-"set list
-set number
+"set list set number
 
 set showmatch
 
@@ -124,7 +125,20 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'fuenor/JpFormat.vim'   
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/neocomplcache'   
-NeoBundle 'vim-scripts/AutoComplPop' 
+NeoBundle 'Shougo/vimfiler'   
+NeoBundle 'vim-scripts/AutoComplPop'  
+NeoBundle 'sjl/gundo.vim' 
+NeoBundle 'vim-scripts/DirDiff.vim'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'fuenor/qfixhowm'
+NeoBundle 'vim-scripts/smartchr'
+
+" unite sources 
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'tsukkee/unite-help' 
+NeoBundle 'ujihisa/unite-gem'
+NeoBundle 'basyura/unite-rails'
 
 
 
@@ -157,7 +171,8 @@ if !exists('g:NeoComplCache_KeywordPatterns')
 endif
 let g:NeoComplCache_KeywordPatterns['default'] = '\v\h\w*'
 
-let g:NeoComplCache_SnippetsDir = $HOME.'/snippets'
+let g:NeoComplCache_SnippetsDir = $HOME.'/snippets' 
+imap <C-k> <Plug>(neocomplcache_start_unite_comple)
 
 
 """ qfixhown 
@@ -166,14 +181,13 @@ set runtimepath+=~/.vim/bundle/qfixhowm/
 let QFixHowm_Key = 'g'
 
 " howm_dirはファイルを保存したいディレクトリを設定
-let howm_dir             = '~/qfixmemo/'
+let howm_dir             = '~/Dropbox/memo/'
 let howm_filename        = '%Y/%m/%Y-%m-%d-%H%M%S.txt'
 let howm_fileencoding    = 'UTF-8'
 let howm_fileformat      = 'unix'
 
 
-" Mac Vim用設定
-
+" color 
 color skittles_dark 
 colorscheme Dark2  
 
@@ -219,7 +233,6 @@ vnoremap y "+y
 
 set gfn=Takaoゴシック\ 11
 set clipboard=unnamedplus  
-
 " IME 
 inoremap <silent> <ESC> <ESC>
 inoremap <silent> <C-[> <ESC>
@@ -248,4 +261,11 @@ endfunction
 " Remap the tab key to select action with InsertTabWrapper
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " }}} Autocompletion using the TAB key 
+
+" vimfiler 
+let g:vimfiler_safe_mode_by_default = 0 
+nnoremap <Space>f :<C-u>VimFiler<CR> 
+
+:command! OpenTempfile :edit `=tempname()` 
+
 
