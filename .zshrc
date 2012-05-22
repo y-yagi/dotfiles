@@ -42,7 +42,10 @@ alias gc="git commit -a "
 
 alias gl='git log --graph --decorate --pretty=format:"%ad [%cn] <c:%h t:%t p:%p> %n %Cgree
 n%d%Creset %s %n" --stat -p'
-alias gls='git log --stat --summary'
+alias gls='git log --stat --summary'  
+
+alias dos2unix='fromdos'
+alias unix2dos='todos'
 
 #
 # # プロンプトの設定 
