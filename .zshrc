@@ -7,7 +7,8 @@ autoload colors
 colors
 
 #PROMPT="%{${fg[green]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"  
-PROMPT_LINE_1="%{${fg[green]}%}[%n@%m]  [ %D %T ] %{${reset_color}%}"
+#PROMPT_LINE_1="%{${fg[green]}%}[%n@%m]  [ %D %T ] %{${reset_color}%}"
+PROMPT_LINE_1="%{${fg[green]}%}[%n@%m] %{${reset_color}%}"
 PROMPT_LINE_2="%{${fg[magenta]}%}%(!.#.$) %{${reset_color}%}"
 PROMPT="${PROMPT_LINE_1} 
 ${PROMPT_LINE_2}"
@@ -60,9 +61,7 @@ setopt extended_history
 #
 # # 補完するかの質問は画面を超える時にのみに行う｡
 LISTMAX=0
-#
-autoload -Uz compinit; compinit
-#
+# autoload -Uz compinit; compinit #
 # # sudo でも補完の対象
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 #
@@ -144,22 +143,11 @@ setopt no_flow_control
 # PostgreSQL 
 #export PGDATA=/usr/local/var/postgres
  
-
-### Mac Setting START
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session. 
-
-export PATH=$PATH:/opt/local/bin
-export PATH=$PATH:/opt/local/sbin/ 
-export RABBIT_HOME=/opt/local/lib/ruby/site_ruby/1.8/rabbit 
-
-export PATH=$PATH:/opt/local/pgsql/bin/
-export PATH=$PATH:$HOME/tools 
-### Mac Setting END 
-
 # gvim setting 
 gvim(){ /usr/bin/gvim -f "$@" & true; }
 
-# rvm
+# rvm 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting 
 rvm use ruby-1.9.3 
 
@@ -192,4 +180,6 @@ chpwd()
   _update_rprompt
 }
 
-export JSTESTDRIVER_HOME=~/tool/program/javascript/jstestdriver
+export JSTESTDRIVER_HOME=~/tool/program/javascript/jstestdriver 
+
+alias historyall='history -E 1'
