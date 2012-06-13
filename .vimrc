@@ -156,15 +156,15 @@ let g:NeoComplCache_MinSyntaxLength = 3
 let g:NeoComplCache_ManualCompletionStartLength = 0
 
 " Print caching percent in statusline.
-"let g:NeoComplCache_CachingPercentInStatusline = 1
+let g:NeoComplCache_CachingPercentInStatusline = 1
 
 " Define dictionary.
-"let g:NeoComplCache_DictionaryFileTypeLists = {
-"            \ 'default' : '',
-"            \ 'vimshell' : $HOME.'/.vimshell_hist',
-"            \ 'ruby' : $DOTVIM.'/dict/ruby.dict'
-"            \ }
-"
+let g:NeoComplCache_DictionaryFileTypeLists = {
+            \ 'default' : '',
+            \ 'vimshell' : $HOME.'/.vimshell_hist',
+            \ 'ruby' : $DOTVIM.'/dict/ruby.dict'
+            \ }
+
 " Define keyword. 
 if !exists('g:NeoComplCache_KeywordPatterns')
     let g:NeoComplCache_KeywordPatterns = {}
@@ -232,7 +232,7 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 vnoremap y "+y  
 
 set gfn=Takaoゴシック\ 11
-set clipboard=unnamedplus  
+set clipboard=unnamedplus,unnamed
 " IME 
 inoremap <silent> <ESC> <ESC>
 inoremap <silent> <C-[> <ESC>
@@ -267,5 +267,4 @@ let g:vimfiler_safe_mode_by_default = 0
 nnoremap <Space>f :<C-u>VimFiler<CR> 
 
 :command! OpenTempfile :edit `=tempname()` 
-
 
