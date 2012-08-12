@@ -5,7 +5,8 @@ set shiftwidth=2
 set fileencoding=UTF-8
 set fileformat=unix   
 
-set nu
+set nu 
+set ic 
 
 scriptencoding utf-8
 
@@ -13,12 +14,7 @@ set expandtab
 set formatoptions-=rq
 set backupdir=$HOME/vimbackup
 set directory=$HOME/vimbackup
-"set dictionary=$HOME/vimfiles/dict/php.dict
-set incsearch
-"set list set number
-
-set showmatch
-
+"set dictionary=$HOME/vimfiles/dict/php.dict set incsearch "set list set number set showmatch 
 color skittles_dark
 colorscheme Dark2
 
@@ -63,7 +59,6 @@ endfunction
 nmap ,z :call ExecuteClassFile()<CR>
 
 "set imdisable 
-
 map sy :call YanktmpYank()<CR>
 map sp :call YanktmpPaste_p()<CR>
 map sP :call YanktmpPaste_P()<CR>
@@ -133,6 +128,13 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'fuenor/qfixhowm'
 NeoBundle 'vim-scripts/smartchr'
+NeoBundle 'basyura/wwwrefe.vim' 
+NeoBundle 'basyura/TweetVim'
+NeoBundle 'mattn/webapi-vim' 
+NeoBundle 'mattn/gist-vim' 
+NeoBundle 'tpope/vim-haml' 
+NeoBundle 'basyura/twibill.vim' 
+NeoBundle 'mattn/zencoding-vim'
 
 " unite sources 
 NeoBundle 'h1mesuke/unite-outline'
@@ -232,7 +234,7 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 vnoremap y "+y  
 
 set gfn=Takaoゴシック\ 11
-set clipboard=unnamedplus,unnamed
+set clipboard=unnamedplus
 " IME 
 inoremap <silent> <ESC> <ESC>
 inoremap <silent> <C-[> <ESC>
