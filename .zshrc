@@ -40,6 +40,7 @@ alias br="git branch"
 alias ga="git add ."
 alias gh="git help"  
 alias gc="git commit -a " 
+alias ch="git checkout" 
 
 alias gl='git log --graph --decorate --pretty=format:"%ad [%cn] <c:%h t:%t p:%p> %n %Cgree
 n%d%Creset %s %n" --stat -p'
@@ -149,7 +150,7 @@ gvim(){ /usr/bin/gvim -f "$@" & true; }
 # rvm 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting 
-rvm use ruby-1.9.3 
+rvm use 2.0.0
 
 
 # display  

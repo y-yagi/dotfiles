@@ -2,8 +2,9 @@ set tabstop=2
 set softtabstop=2 
 set shiftwidth=2 
 
-set fileencoding=UTF-8
-set fileformat=unix   
+set encoding=utf-8 fileencodings=
+set fileformat=unix    
+set termencoding=utf-8
 
 set nu 
 set ic 
@@ -134,7 +135,9 @@ NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/gist-vim' 
 NeoBundle 'tpope/vim-haml' 
 NeoBundle 'basyura/twibill.vim' 
-NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'mattn/zencoding-vim' 
+NeoBundle 'sonesuke/tumblr-vim' 
+NeoBundle 'mattn/vim-oauth'
 
 " unite sources 
 NeoBundle 'h1mesuke/unite-outline'
@@ -265,7 +268,7 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " }}} Autocompletion using the TAB key 
 
 " vimfiler 
-let g:vimfiler_safe_mode_by_default = 0 
+let g:vimfiler_safe_mode_by_default = 0  
 nnoremap <Space>f :<C-u>VimFiler<CR> 
 
 :command! OpenTempfile :edit `=tempname()` 
