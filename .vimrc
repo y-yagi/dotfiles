@@ -1,13 +1,13 @@
 set tabstop=2
-set softtabstop=2 
-set shiftwidth=2 
+set softtabstop=2
+set shiftwidth=2
 
 set encoding=utf-8 fileencodings=
-set fileformat=unix    
+set fileformat=unix
 set termencoding=utf-8
 
-set nu 
-set ic 
+set nu
+set ic
 
 scriptencoding utf-8
 
@@ -15,13 +15,13 @@ set expandtab
 set formatoptions-=rq
 set backupdir=$HOME/vimbackup
 set directory=$HOME/vimbackup
-"set dictionary=$HOME/vimfiles/dict/php.dict set incsearch "set list set number set showmatch 
+"set dictionary=$HOME/vimfiles/dict/php.dict set incsearch "set list set number set showmatch
 color skittles_dark
 colorscheme Dark2
 
 set wrap
 
-"全角スペースを視覚化 
+"全角スペースを視覚化
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
 au BufNewFile,BufRead * match ZenkakuSpace /　/
 
@@ -53,19 +53,19 @@ nmap ,c :call ExecuteCompile()<CR>
 
 function! ExecuteClassFile()
   let buf = matchlist(bufname(""), '\(.*\)\.scala')
-  execute '!' . &ft . ' ' . buf[1]  
+  execute '!' . &ft . ' ' . buf[1]
   "  let result = system(&ft . ' ' . buf[1])
   "echo result
 endfunction
 nmap ,z :call ExecuteClassFile()<CR>
 
-"set imdisable 
+"set imdisable
 map sy :call YanktmpYank()<CR>
 map sp :call YanktmpPaste_p()<CR>
 map sP :call YanktmpPaste_P()<CR>
 
 "set background=dark
-"set clipboard=unnamed,autoselect 
+"set clipboard=unnamed,autoselect
 
 set nocompatible               " be iMproved
 filetype plugin indent off     " required!
@@ -97,51 +97,53 @@ if !has('gui_running') && !(has('win32') || has('win64'))
     autocmd MyAutoCmd BufWritePost $MYVIMRC nested source $MYVIMRC
 else
     " .vimrcの再読込時にも色が変化するようにする
-    autocmd MyAutoCmd BufWritePost $MYVIMRC source $MYVIMRC | 
-                \if has('gui_running') | source $MYGVIMRC  
+    autocmd MyAutoCmd BufWritePost $MYVIMRC source $MYVIMRC |
+                \if has('gui_running') | source $MYGVIMRC
     autocmd MyAutoCmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
 endif
 
 
-" plugin 
+" plugin
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
   call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 " let NeoBundle manage NeoBundle
-" required! 
+" required!
 NeoBundle 'Shougo/neobundle.vim'
 " recommended to install
 NeoBundle 'Shougo/vimproc'
 " after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
-"NeoBundle 'rails.vim'  
+"NeoBundle 'rails.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tpope/vim-rails'
-NeoBundle 'fuenor/JpFormat.vim'   
+NeoBundle 'fuenor/JpFormat.vim'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Shougo/neocomplcache'   
-NeoBundle 'Shougo/vimfiler'   
-NeoBundle 'vim-scripts/AutoComplPop'  
-NeoBundle 'sjl/gundo.vim' 
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/vimfiler'
+NeoBundle 'vim-scripts/AutoComplPop'
+NeoBundle 'sjl/gundo.vim'
 NeoBundle 'vim-scripts/DirDiff.vim'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'fuenor/qfixhowm'
 NeoBundle 'vim-scripts/smartchr'
-NeoBundle 'basyura/wwwrefe.vim' 
+NeoBundle 'basyura/wwwrefe.vim'
 NeoBundle 'basyura/TweetVim'
-NeoBundle 'mattn/webapi-vim' 
-NeoBundle 'mattn/gist-vim' 
-NeoBundle 'tpope/vim-haml' 
-NeoBundle 'basyura/twibill.vim' 
-NeoBundle 'mattn/zencoding-vim' 
-NeoBundle 'sonesuke/tumblr-vim' 
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'mattn/gist-vim'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'basyura/twibill.vim'
+NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'sonesuke/tumblr-vim'
 NeoBundle 'mattn/vim-oauth'
+" NeoBundle 'mileszs/ack.vim'
+NeoBundle 'rking/ag.vim'
 
-" unite sources 
+" unite sources
 NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'tsukkee/unite-help' 
+NeoBundle 'tsukkee/unite-help'
 NeoBundle 'ujihisa/unite-gem'
 NeoBundle 'basyura/unite-rails'
 
@@ -170,18 +172,18 @@ let g:NeoComplCache_DictionaryFileTypeLists = {
             \ 'ruby' : $DOTVIM.'/dict/ruby.dict'
             \ }
 
-" Define keyword. 
+" Define keyword.
 if !exists('g:NeoComplCache_KeywordPatterns')
     let g:NeoComplCache_KeywordPatterns = {}
 endif
 let g:NeoComplCache_KeywordPatterns['default'] = '\v\h\w*'
 
-let g:NeoComplCache_SnippetsDir = $HOME.'/snippets' 
+let g:NeoComplCache_SnippetsDir = $HOME.'/snippets'
 imap <C-k> <Plug>(neocomplcache_start_unite_comple)
 
 
-""" qfixhown 
-set runtimepath+=~/.vim/bundle/qfixhowm/ 
+""" qfixhown
+set runtimepath+=~/.vim/bundle/qfixhowm/
 " キーマップリーダー
 let QFixHowm_Key = 'g'
 
@@ -192,20 +194,20 @@ let howm_fileencoding    = 'UTF-8'
 let howm_fileformat      = 'unix'
 
 
-" color 
-color skittles_dark 
-colorscheme Dark2  
+" color
+color skittles_dark
+colorscheme Dark2
 
 
-" JpFormat 
+" JpFormat
 let ExtViewer_txt = "call system('evince %f &')"
-let EV_toFenc_txt = '' 
+let EV_toFenc_txt = ''
 
-"setlocal omnifunc=syntaxcomplete#Complete 
+"setlocal omnifunc=syntaxcomplete#Complete
 "setlocal omnifunc=htmlcomplete#CompleteTags
 "setlocal omnifunc=rubycomplete#Complete
-setlocal omnifunc=syntaxcomplete#Complete 
-set omnifunc=syntaxcomplete#Complete 
+setlocal omnifunc=syntaxcomplete#Complete
+set omnifunc=syntaxcomplete#Complete
 
 
 """ unite.vim
@@ -232,18 +234,18 @@ au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q 
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
-vnoremap y "+y  
+vnoremap y "+y
 
 set gfn=Takaoゴシック\ 11
 set clipboard=unnamedplus
-" IME 
+" IME
 inoremap <silent> <ESC> <ESC>
 inoremap <silent> <C-[> <ESC>
-inoremap <silent> <C-j> <C-^> 
+inoremap <silent> <C-j> <C-^>
 set formatoptions+=mM
- 
+
 
 " autocomplpop
 inoremap <silent> <expr> ,t
@@ -265,11 +267,12 @@ function! InsertTabWrapper()
 endfunction
 " Remap the tab key to select action with InsertTabWrapper
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-" }}} Autocompletion using the TAB key 
+" }}} Autocompletion using the TAB key
 
-" vimfiler 
-let g:vimfiler_safe_mode_by_default = 0  
-nnoremap <Space>f :<C-u>VimFiler<CR> 
+" vimfiler
+let g:vimfiler_safe_mode_by_default = 0
+nnoremap <Space>f :<C-u>VimFiler<CR>
 
-:command! OpenTempfile :edit `=tempname()` 
+:command! OpenTempfile :edit `=tempname()`
 
+autocmd BufWritePre * :%s/\s\+$//ge

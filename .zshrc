@@ -150,7 +150,7 @@ gvim(){ /usr/bin/gvim -f "$@" & true; }
 # rvm 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting 
-rvm use 2.0.0
+rvm use 2.0.0-p195
 
 
 # display  
@@ -183,4 +183,5 @@ chpwd()
 
 export JSTESTDRIVER_HOME=~/tool/program/javascript/jstestdriver 
 
-alias historyall='history -E 1'
+alias historyall='history -E 1' 
+limit coredumpsize unlimited  
