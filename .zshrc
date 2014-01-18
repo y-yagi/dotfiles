@@ -1,16 +1,16 @@
 # 文字コードの設定
-export LANG=ja_JP.UTF-8 
+export LANG=ja_JP.UTF-8
 
-# prompt  
-   
+# prompt
+
 autoload colors
 colors
 
-#PROMPT="%{${fg[green]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"  
+#PROMPT="%{${fg[green]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"
 #PROMPT_LINE_1="%{${fg[green]}%}[%n@%m]  [ %D %T ] %{${reset_color}%}"
 PROMPT_LINE_1="%{${fg[green]}%}[%n@%m] %{${reset_color}%}"
 PROMPT_LINE_2="%{${fg[magenta]}%}%(!.#.$) %{${reset_color}%}"
-PROMPT="${PROMPT_LINE_1} 
+PROMPT="${PROMPT_LINE_1}
 ${PROMPT_LINE_2}"
 
 
@@ -26,31 +26,31 @@ export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 # 関数
 find-grep () { find . -type f -print | xargs grep -n --binary-files=without-match $@ }
 
-# alias 
+# alias
 alias ls='ls -G --color -a'
 alias ll='ls -ltr'
 #alias vi='vim'
-#alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"' 
+#alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
 alias c='clear'
 
-# git 
+# git
 alias gs="git status"
 alias gd="git diff"
 alias br="git branch"
 alias ga="git add ."
-alias gh="git help"  
-alias gc="git commit -a " 
-alias ch="git checkout" 
+alias gh="git help"
+alias gc="git commit -a "
+alias ch="git checkout"
 
 alias gl='git log --graph --decorate --pretty=format:"%ad [%cn] <c:%h t:%t p:%p> %n %Cgree
 n%d%Creset %s %n" --stat -p'
-alias gls='git log --stat --summary'  
+alias gls='git log --stat --summary'
 
 alias dos2unix='fromdos'
 alias unix2dos='todos'
 
 #
-# # プロンプトの設定 
+# # プロンプトの設定
 #
 # # ヒストリの設定
 HISTFILE=~/.histfile
@@ -67,7 +67,7 @@ LISTMAX=0
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
 #
 # # cdのタイミングで自動的にpushd
-setopt auto_pushd 
+setopt auto_pushd
 #
 # # 複数の zsh を同時に使う時など history ファイルに上書きせず追加
 setopt append_history
@@ -141,21 +141,25 @@ setopt auto_cd
 # # C-s, C-qを無効にする。
 setopt no_flow_control
 
-# PostgreSQL 
+# PostgreSQL
 #export PGDATA=/usr/local/var/postgres
- 
-# gvim setting 
+
+# gvim setting
 gvim(){ /usr/bin/gvim -f "$@" & true; }
 
-# rvm 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting 
-rvm use 2.0.0-p195
+# rvm
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#rvm use 2.0.0-p195
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 
-# display  
-xgamma -bgamma 0.87 
- 
+# display
+xgamma -bgamma 0.87
+
 
 _set_env_git_current_branch() {
   GIT_CURRENT_BRANCH=$( git branch &> /dev/null | grep '^\*' | cut -b 3- )
@@ -167,10 +171,10 @@ _update_rprompt () {
   else
     RPROMPT="%{$fg_bold[white]%}[%{$reset_color%}%{$fg[cyan]%}%~%{$reset_color%}%{$fg_bold[white]%}]%{$reset_color%}"
   fi
-} 
-  
-precmd() 
-{ 
+}
+
+precmd()
+{
   _set_env_git_current_branch
   _update_rprompt
 }
@@ -181,7 +185,19 @@ chpwd()
   _update_rprompt
 }
 
-export JSTESTDRIVER_HOME=~/tool/program/javascript/jstestdriver 
+export JSTESTDRIVER_HOME=~/tool/program/javascript/jstestdriver
 
-alias historyall='history -E 1' 
-limit coredumpsize unlimited  
+alias historyall='history -E 1'
+limit coredumpsize unlimited
+
+# R
+export R_LIBS=~/Rlib
+
+# Android
+export ANDROID_HOME=/home/yaginuma/tool/other/android-sdk-linux
+
+
+# BEGIN Ruboto setup
+source ~/.rubotorc
+# END Ruboto setup
+

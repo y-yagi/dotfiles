@@ -140,6 +140,7 @@ NeoBundle 'sonesuke/tumblr-vim'
 NeoBundle 'mattn/vim-oauth'
 " NeoBundle 'mileszs/ack.vim'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'dhruvasagar/vim-table-mode'
 
 " unite sources
 NeoBundle 'h1mesuke/unite-outline'
