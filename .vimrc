@@ -20,6 +20,7 @@ color skittles_dark
 colorscheme Dark2
 
 set wrap
+filetype plugin on
 
 "全角スペースを視覚化
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
@@ -112,8 +113,14 @@ endif
 " required!
 NeoBundle 'Shougo/neobundle.vim'
 " recommended to install
-NeoBundle 'Shougo/vimproc'
-" after install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 "NeoBundle 'rails.vim'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
@@ -136,7 +143,6 @@ NeoBundle 'mattn/gist-vim'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'basyura/twibill.vim'
 NeoBundle 'mattn/zencoding-vim'
-NeoBundle 'sonesuke/tumblr-vim'
 NeoBundle 'mattn/vim-oauth'
 " NeoBundle 'mileszs/ack.vim'
 NeoBundle 'rking/ag.vim'
@@ -148,7 +154,8 @@ NeoBundle 'tsukkee/unite-help'
 NeoBundle 'ujihisa/unite-gem'
 NeoBundle 'basyura/unite-rails'
 
-
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'chreekat/vim-instant-markdown'
 
 " Use neocomplcache.
 let g:NeoComplCache_EnableAtStartup = 1
@@ -189,6 +196,7 @@ set runtimepath+=~/.vim/bundle/qfixhowm/
 let QFixHowm_Key = 'g'
 
 " howm_dirはファイルを保存したいディレクトリを設定
+
 let howm_dir             = '~/Dropbox/memo/'
 let howm_filename        = '%Y/%m/%Y-%m-%d-%H%M%S.txt'
 let howm_fileencoding    = 'UTF-8'
@@ -277,3 +285,6 @@ nnoremap <Space>f :<C-u>VimFiler<CR>
 :command! OpenTempfile :edit `=tempname()`
 
 autocmd BufWritePre * :%s/\s\+$//ge
+
+autocmd BufRead,BufNewFile *.md  setfiletype markdown
+syntax on
