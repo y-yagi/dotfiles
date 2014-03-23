@@ -2,7 +2,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 
-set encoding=utf-8 fileencodings=
+set encoding=utf-8
 set fileformat=unix
 set termencoding=utf-8
 
@@ -16,11 +16,8 @@ set formatoptions-=rq
 set backupdir=$HOME/vimbackup
 set directory=$HOME/vimbackup
 "set dictionary=$HOME/vimfiles/dict/php.dict set incsearch "set list set number set showmatch
-color skittles_dark
-colorscheme Dark2
 
 set wrap
-filetype plugin on
 
 "全角スペースを視覚化
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
@@ -65,7 +62,6 @@ map sy :call YanktmpYank()<CR>
 map sp :call YanktmpPaste_p()<CR>
 map sP :call YanktmpPaste_P()<CR>
 
-"set background=dark
 "set clipboard=unnamed,autoselect
 
 set nocompatible               " be iMproved
@@ -125,6 +121,7 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'fuenor/JpFormat.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/neocomplcache'
@@ -156,6 +153,15 @@ NeoBundle 'basyura/unite-rails'
 
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'chreekat/vim-instant-markdown'
+
+" colorschemes
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'sjl/badwolf'
+NeoBundle 'djjcast/mirodark'
+NeoBundle 'chriskempson/tomorrow-theme'
+
+NeoBundle 'thinca/vim-quickrun'
 
 " Use neocomplcache.
 let g:NeoComplCache_EnableAtStartup = 1
@@ -204,8 +210,9 @@ let howm_fileformat      = 'unix'
 
 
 " color
-color skittles_dark
-colorscheme Dark2
+"colorscheme molokai
+colorscheme "Tomorrow-Night"
+set background=dark
 
 
 " JpFormat
@@ -287,4 +294,8 @@ nnoremap <Space>f :<C-u>VimFiler<CR>
 autocmd BufWritePre * :%s/\s\+$//ge
 
 autocmd BufRead,BufNewFile *.md  setfiletype markdown
+
+set nocompatible
 syntax on
+filetype on
+filetype indent on
