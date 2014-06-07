@@ -22,6 +22,8 @@ SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
 # パスの設定
 PATH=/usr/local/bin:/usr/bin:$PATH
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
+export PHANTOMJS_EXECUTABLE=$HOME/./node_modules/casperjs/node_modules/.bin/phantomjs
+
 
 # 関数
 find-grep () { find . -type f -print | xargs grep -n --binary-files=without-match $@ }
@@ -32,6 +34,10 @@ alias ll='ls -ltr'
 #alias vi='vim'
 #alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
 alias c='clear'
+
+# alias(ruby)
+alias be='bundle exec'
+alias ber='bundle exec rake'
 
 # git
 alias gs="git status"
@@ -194,10 +200,22 @@ limit coredumpsize unlimited
 export R_LIBS=~/Rlib
 
 # Android
-export ANDROID_HOME=/home/yaginuma/tool/other/android-sdk-linux
+export ANDROID_HOME=/home/yaginuma/tool/program/android-studio/sdk
+export PATH="/home/yaginuma/tool/program/android-studio/sdk/tools/templates/gradle/wrapper:/home/yaginuma/tool/program/android-studio/sdk/platform-tools:$PATH"
 
 
 # BEGIN Ruboto setup
 source ~/.rubotorc
 # END Ruboto setup
 
+
+# nvm
+[ -s "/home/yaginuma/.nvm/nvm.sh" ] && . "/home/yaginuma/.nvm/nvm.sh" # This loads nvm
+nvm use 0.10
+export PATH="/home/yaginuma/node_modules/.bin:$PATH"
+
+
+# go
+export GOPATH=/home/yaginuma/program/go/go_home
+export PATH="$GOPATH/bin:$PATH"
+export GOSRC=/home/yaginuma/tool/program/go

@@ -162,6 +162,7 @@ NeoBundle 'djjcast/mirodark'
 NeoBundle 'chriskempson/tomorrow-theme'
 
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'tpope/vim-fugitive'
 
 " Use neocomplcache.
 let g:NeoComplCache_EnableAtStartup = 1
@@ -291,11 +292,19 @@ nnoremap <Space>f :<C-u>VimFiler<CR>
 
 :command! OpenTempfile :edit `=tempname()`
 
-autocmd BufWritePre * :%s/\s\+$//ge
+"autocmd BufWritePre * :%s/\s\+$//ge
 
 autocmd BufRead,BufNewFile *.md  setfiletype markdown
+
+" go
+set rtp+=$GOSRC/misc/vim
+exe "set rtp+=".globpath($GOSRC, "src/github.com/nsf/gocode/vim")
+set completeopt=menu,preview
+autocmd FileType go compiler go
+
 
 set nocompatible
 syntax on
 filetype on
 filetype indent on
+filetype plugin on
