@@ -292,7 +292,8 @@ nnoremap <Space>f :<C-u>VimFiler<CR>
 
 :command! OpenTempfile :edit `=tempname()`
 
-"autocmd BufWritePre * :%s/\s\+$//ge
+" delete space
+autocmd BufWritePre * :%s/\s\+$//ge
 
 autocmd BufRead,BufNewFile *.md  setfiletype markdown
 
