@@ -125,6 +125,8 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'fuenor/JpFormat.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'vim-scripts/AutoComplPop'
 NeoBundle 'sjl/gundo.vim'
@@ -193,9 +195,11 @@ if !exists('g:NeoComplCache_KeywordPatterns')
 endif
 let g:NeoComplCache_KeywordPatterns['default'] = '\v\h\w*'
 
-let g:NeoComplCache_SnippetsDir = $HOME.'/snippets'
-imap <C-k> <Plug>(neocomplcache_start_unite_comple)
-
+"let g:NeoComplCache_SnippetsDir = $HOME.'/snippets'
+"imap <C-k> <Plug>(neocomplcache_start_unite_comple)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+let g:neosnippet#snippets_directory = $HOME.'/snippets'
 
 """ qfixhown
 set runtimepath+=~/.vim/bundle/qfixhowm/
@@ -212,8 +216,8 @@ let howm_fileformat      = 'unix'
 
 " color
 "colorscheme molokai
-colorscheme "Tomorrow-Night"
 set background=dark
+"colorscheme "Tomorrow-Night"
 
 
 " JpFormat
@@ -288,12 +292,12 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " vimfiler
 let g:vimfiler_safe_mode_by_default = 0
-nnoremap <Space>f :<C-u>VimFiler<CR>
+"nnoremap <Space>f :<C-u>VimFiler<CR>
 
 :command! OpenTempfile :edit `=tempname()`
 
 " delete space
-autocmd BufWritePre * :%s/\s\+$//ge
+"autocmd BufWritePre * :%s/\s\+$//ge
 
 autocmd BufRead,BufNewFile *.md  setfiletype markdown
 

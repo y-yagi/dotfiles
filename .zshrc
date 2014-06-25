@@ -38,6 +38,8 @@ alias c='clear'
 # alias(ruby)
 alias be='bundle exec'
 alias ber='bundle exec rake'
+alias bi='bundle instal'
+alias bu='bundle update'
 
 # git
 alias gs="git status"
