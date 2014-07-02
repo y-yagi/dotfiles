@@ -202,8 +202,8 @@ limit coredumpsize unlimited
 export R_LIBS=~/Rlib
 
 # Android
-export ANDROID_HOME=/home/yaginuma/tool/program/android-studio/sdk
-export PATH="/home/yaginuma/tool/program/android-studio/sdk/tools/templates/gradle/wrapper:/home/yaginuma/tool/program/android-studio/sdk/platform-tools:$PATH"
+export ANDROID_HOME=/home/yaginuma/tool/program/android-sdk
+export PATH="/home/yaginuma/tool/program/android-sdk/tools/templates/gradle/wrapper:/home/yaginuma/tool/program/android-studio/sdk/platform-tools:$PATH"
 
 
 # BEGIN Ruboto setup
@@ -221,3 +221,32 @@ export PATH="/home/yaginuma/node_modules/.bin:$PATH"
 export GOPATH=/home/yaginuma/program/go/go_home
 export PATH="$GOPATH/bin:$PATH"
 export GOSRC=/home/yaginuma/tool/program/go
+
+# peco
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^n' peco-select-history
+
+
+function peco-cdr () {
+    local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
+    if [ -n "$selected_dir" ]; then
+        BUFFER="cd ${selected_dir}"
+        zle accept-line
+    fi
+    zle clear-screen
+}
+zle -N peco-cdr
+bindkey '^@' peco-cdr
