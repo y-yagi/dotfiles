@@ -141,7 +141,7 @@ NeoBundle 'mattn/webapi-vim'
 NeoBundle 'mattn/gist-vim'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'basyura/twibill.vim'
-NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mattn/vim-oauth'
 " NeoBundle 'mileszs/ack.vim'
 NeoBundle 'rking/ag.vim'
@@ -152,6 +152,7 @@ NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'tsukkee/unite-help'
 NeoBundle 'ujihisa/unite-gem'
 NeoBundle 'basyura/unite-rails'
+NeoBundle 'sgur/unite-qf'
 
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'chreekat/vim-instant-markdown'
@@ -233,7 +234,7 @@ set omnifunc=syntaxcomplete#Complete
 
 """ unite.vim
 " 入力モードで開始する
-" let g:unite_enable_start_insert=1
+let g:unite_enable_start_insert=1
 " バッファ一覧
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 " ファイル一覧
@@ -297,7 +298,7 @@ let g:vimfiler_safe_mode_by_default = 0
 :command! OpenTempfile :edit `=tempname()`
 
 " delete space
-"autocmd BufWritePre * :%s/\s\+$//ge
+autocmd BufWritePre * :%s/\s\+$//ge
 
 autocmd BufRead,BufNewFile *.md  setfiletype markdown
 
@@ -306,6 +307,22 @@ set rtp+=$GOSRC/misc/vim
 exe "set rtp+=".globpath($GOSRC, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
 autocmd FileType go compiler go
+
+
+command! -nargs=1 Gmilk call s:Gmilk("gomilk -a", <f-args>)
+
+function! s:Gmilk(cmd, arg)
+  silent execute "cgetexpr system(\"" . a:cmd . " ". a:arg . "\")"
+  if len(getqflist()) == 0
+    echohl WarningMsg
+    echomsg "No match found."
+    echohl None
+  else
+    "execute "Unite -auto-preview qf"
+    execute "Unite qf"
+    redraw!
+  endif
+endfunction
 
 
 set nocompatible

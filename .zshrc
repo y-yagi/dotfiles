@@ -237,7 +237,7 @@ function peco-select-history() {
     zle clear-screen
 }
 zle -N peco-select-history
-bindkey '^n' peco-select-history
+bindkey '^r' peco-select-history
 
 
 function peco-cdr () {
@@ -250,3 +250,20 @@ function peco-cdr () {
 }
 zle -N peco-cdr
 bindkey '^@' peco-cdr
+
+
+function agvim () {
+  vim $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+}
+
+function gomilkvim () {
+  vim $(gomilk -a $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+}
+
+function find_rails_commitlog() {
+  cd /home/yaginuma/program/rails/rails/ && git log | peco
+}
+
+function find_rails() {
+  vim $(find /home/yaginuma/program/rails/rails -type f | peco )
+}
