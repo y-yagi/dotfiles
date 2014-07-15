@@ -267,3 +267,6 @@ function find_rails_commitlog() {
 function find_rails() {
   vim $(find /home/yaginuma/program/rails/rails -type f | peco )
 }
+
+# added by travis gem
+[ -f /home/yaginuma/.travis/travis.sh ] && source /home/yaginuma/.travis/travis.sh
