@@ -260,11 +260,11 @@ function gomilkvim () {
   vim $(gomilk -a $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
 }
 
-function find_rails_commitlog() {
+function rails_commitlog() {
   cd /home/yaginuma/program/rails/rails/ && git log | peco
 }
 
-function find_rails() {
+function rails_source() {
   vim $(find /home/yaginuma/program/rails/rails -type f | peco )
 }
 
