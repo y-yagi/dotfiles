@@ -34,6 +34,7 @@ alias ll='ls -ltr'
 #alias vi='vim'
 #alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
 alias c='clear'
+alias sl='sl -e'
 
 # alias(ruby)
 alias be='bundle exec'
@@ -203,7 +204,8 @@ export R_LIBS=~/Rlib
 
 # Android
 export ANDROID_HOME=/home/yaginuma/tool/program/android-sdk
-export PATH="/home/yaginuma/tool/program/android-sdk/tools/templates/gradle/wrapper:/home/yaginuma/tool/program/android-studio/sdk/platform-tools:$PATH"
+export PATH=/home/yaginuma/tool/program/android-sdk/tools/templates/gradle/wrapper:$PATH
+export PATH=/home/yaginuma/tool/program/android-sdk/platform-tools:$PATH
 
 
 # BEGIN Ruboto setup
