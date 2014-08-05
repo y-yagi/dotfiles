@@ -166,6 +166,7 @@ NeoBundle 'chriskempson/tomorrow-theme'
 
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'kchmck/vim-coffee-script'
 
 " Use neocomplcache.
 let g:NeoComplCache_EnableAtStartup = 1
