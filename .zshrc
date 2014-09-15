@@ -50,6 +50,8 @@ alias ga="git add ."
 alias gh="git help"
 alias gc="git commit -a "
 alias ch="git checkout"
+alias gpl="git pull"
+alias gps="git push"
 
 alias gl='git log --graph --decorate --pretty=format:"%ad [%cn] <c:%h t:%t p:%p> %n %Cgree
 n%d%Creset %s %n" --stat -p'
