@@ -146,6 +146,7 @@ NeoBundle 'mattn/vim-oauth'
 " NeoBundle 'mileszs/ack.vim'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'dhruvasagar/vim-table-mode'
+NeoBundle 'tpope/vim-surround'
 
 " unite sources
 NeoBundle 'h1mesuke/unite-outline'
