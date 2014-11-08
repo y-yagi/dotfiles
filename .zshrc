@@ -5,6 +5,7 @@ export LANG=ja_JP.UTF-8
 
 autoload colors
 colors
+autoload -Uz zmv
 
 #PROMPT="%{${fg[green]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"
 #PROMPT_LINE_1="%{${fg[green]}%}[%n@%m]  [ %D %T ] %{${reset_color}%}"
