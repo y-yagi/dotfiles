@@ -223,9 +223,10 @@ export PATH="/home/yaginuma/node_modules/.bin:$PATH"
 
 
 # go
+export GOROOT=/home/yaginuma/tool/program/go/
+export PATH=$GOROOT/bin:$PATH
 export GOPATH=/home/yaginuma/program/go/go_home
-export PATH="$GOPATH/bin:$PATH"
-export GOSRC=/home/yaginuma/tool/program/go
+export PATH=$GOPATH/bin:$PATH
 
 # peco
 function peco-select-history() {
