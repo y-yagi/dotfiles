@@ -221,6 +221,9 @@ source ~/.rubotorc
 nvm use 0.10
 export PATH="/home/yaginuma/node_modules/.bin:$PATH"
 
+# elasticsearch
+export PATH="/usr/share/elasticsearch/bin/":$PATH
+export TEST_CLUSTER_COMMAND="/usr/share/elasticsearch/bin/elasticsearch"
 
 # go
 export GOROOT=/home/yaginuma/tool/program/go/

@@ -103,8 +103,11 @@ endif
 " plugin
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  call neobundle#end()
 endif
+
 " let NeoBundle manage NeoBundle
 " required!
 NeoBundle 'Shougo/neobundle.vim'
@@ -147,6 +150,7 @@ NeoBundle 'mattn/vim-oauth'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'dhruvasagar/vim-table-mode'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'slim-template/vim-slim'
 
 " unite sources
 NeoBundle 'h1mesuke/unite-outline'
@@ -168,6 +172,7 @@ NeoBundle 'chriskempson/tomorrow-theme'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'kien/ctrlp.vim'
 
 " Use neocomplcache.
 let g:NeoComplCache_EnableAtStartup = 1
@@ -309,6 +314,11 @@ set rtp+=$GOSRC/misc/vim
 exe "set rtp+=".globpath($GOSRC, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
 autocmd FileType go compiler go
+
+" ctrlp
+map <Leader>b :CtrlPBuffer<cr>
+let g:ctrlp_match_window_bottom   = 0
+let g:ctrlp_match_window_reversed = 0
 
 
 command! -nargs=1 Gmilk call s:Gmilk("gomilk -a", <f-args>)
