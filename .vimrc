@@ -321,7 +321,7 @@ map <Leader>b :CtrlPBuffer<cr>
 let g:ctrlp_match_window_bottom   = 0
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
-let g:ctrlp_user_command = 'files -p %s'
+let g:ctrlp_user_command = 'files -p %s'  " use go get github.com/mattn/files
 
 
 command! -nargs=1 Gmilk call s:Gmilk("gomilk -a", <f-args>)
