@@ -211,11 +211,6 @@ export PATH=/home/yaginuma/tool/program/android-sdk/tools/templates/gradle/wrapp
 export PATH=/home/yaginuma/tool/program/android-sdk/platform-tools:$PATH
 
 
-# BEGIN Ruboto setup
-source ~/.rubotorc
-# END Ruboto setup
-
-
 # nvm
 [ -s "/home/yaginuma/.nvm/nvm.sh" ] && . "/home/yaginuma/.nvm/nvm.sh" # This loads nvm
 nvm use 0.10

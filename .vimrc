@@ -173,6 +173,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'nixprime/cpsm'
 
 " Use neocomplcache.
 let g:NeoComplCache_EnableAtStartup = 1
@@ -319,6 +320,8 @@ autocmd FileType go compiler go
 map <Leader>b :CtrlPBuffer<cr>
 let g:ctrlp_match_window_bottom   = 0
 let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
+let g:ctrlp_user_command = 'files -p %s'
 
 
 command! -nargs=1 Gmilk call s:Gmilk("gomilk -a", <f-args>)
@@ -336,9 +339,10 @@ function! s:Gmilk(cmd, arg)
   endif
 endfunction
 
-
 set nocompatible
 syntax on
 filetype on
 filetype indent on
 filetype plugin on
+
+
