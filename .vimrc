@@ -151,6 +151,7 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'dhruvasagar/vim-table-mode'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'ngmy/vim-rubocop'
 
 " unite sources
 NeoBundle 'h1mesuke/unite-outline'
@@ -174,6 +175,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'nixprime/cpsm'
+NeoBundle 'itchyny/calendar.vim'
 
 " Use neocomplcache.
 let g:NeoComplCache_EnableAtStartup = 1
@@ -322,6 +324,13 @@ let g:ctrlp_match_window_bottom   = 0
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
 let g:ctrlp_user_command = 'files -p %s'  " use go get github.com/mattn/files
+
+" for work
+let g:vimrubocop_config = '/home/yaginuma/work/Qualizm/.rubocop.yml'
+
+" calendar
+let g:calendar_frame = 'default'
+set t_Co=256
 
 
 command! -nargs=1 Gmilk call s:Gmilk("gomilk -a", <f-args>)
