@@ -53,6 +53,7 @@ alias gc="git commit -a "
 alias ch="git checkout"
 alias gpl="git pull"
 alias gps="git push"
+alias gfixup="git commit --amend --no-edit"
 
 alias gl='git log --graph --decorate --pretty=format:"%ad [%cn] <c:%h t:%t p:%p> %n %Cgree
 n%d%Creset %s %n" --stat -p'
