@@ -110,6 +110,7 @@ endif
 
 " let NeoBundle manage NeoBundle
 " required!
+call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundle 'Shougo/neobundle.vim'
 " recommended to install
 NeoBundle 'Shougo/vimproc', {
@@ -176,6 +177,8 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'nixprime/cpsm'
 NeoBundle 'itchyny/calendar.vim'
+call neobundle#end()
+
 
 " Use neocomplcache.
 let g:NeoComplCache_EnableAtStartup = 1
@@ -226,7 +229,7 @@ let howm_fileformat      = 'unix'
 
 
 " color
-"colorscheme molokai
+colorscheme molokai
 set background=dark
 "colorscheme "Tomorrow-Night"
 

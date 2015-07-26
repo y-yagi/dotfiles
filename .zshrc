@@ -24,6 +24,7 @@ SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
 PATH=/usr/local/bin:/usr/bin:$PATH
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
 export PHANTOMJS_EXECUTABLE=$HOME/./node_modules/casperjs/node_modules/.bin/phantomjs
+export PATH="$HOME/my-exe/:$PATH"
 
 
 # 関数
@@ -160,18 +161,19 @@ setopt no_flow_control
 # gvim setting
 gvim(){ /usr/bin/gvim -f "$@" & true; }
 
-# rvm
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-#rvm use 2.0.0-p195
-
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+# gvm
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+# exenv
+export PATH="$HOME/.exenv/bin:$PATH"
+eval "$(exenv init -)"
 
 # display
-xgamma -bgamma 0.87
+#xgamma -bgamma 0.87
 
 
 _set_env_git_current_branch() {
@@ -213,19 +215,19 @@ export PATH=/home/yaginuma/tool/program/android-sdk/platform-tools:$PATH
 
 
 # nvm
-[ -s "/home/yaginuma/.nvm/nvm.sh" ] && . "/home/yaginuma/.nvm/nvm.sh" # This loads nvm
-nvm use 0.10
-export PATH="/home/yaginuma/node_modules/.bin:$PATH"
+#[ -s "/home/yaginuma/.nvm/nvm.sh" ] && . "/home/yaginuma/.nvm/nvm.sh" # This loads nvm
+#nvm use 0.10
+#export PATH="/home/yaginuma/node_modules/.bin:$PATH"
 
 # elasticsearch
 export PATH="/usr/share/elasticsearch/bin/":$PATH
 export TEST_CLUSTER_COMMAND="/usr/share/elasticsearch/bin/elasticsearch"
 
 # go
-export GOROOT=/home/yaginuma/tool/program/go/
-export PATH=$GOROOT/bin:$PATH
-export GOPATH=/home/yaginuma/program/go/go_home
-export PATH=$GOPATH/bin:$PATH
+# export GOROOT=/home/yaginuma/tool/program/go/
+# export PATH=$GOROOT/bin:$PATH
+# export GOPATH=/home/yaginuma/program/go/go_home
+# export PATH=$GOPATH/bin:$PATH
 
 # peco
 function peco-select-history() {
@@ -275,3 +277,5 @@ function rails_source() {
 
 # added by travis gem
 [ -f /home/yaginuma/.travis/travis.sh ] && source /home/yaginuma/.travis/travis.sh
+
+. /etc/profile.d/vte-2.91.sh
