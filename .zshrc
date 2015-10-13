@@ -59,6 +59,9 @@ alias gfixup="git commit --amend --no-edit"
 alias gl='git log --graph --decorate --pretty=format:"%ad [%cn] <c:%h t:%t p:%p> %n %Cgree
 n%d%Creset %s %n" --stat -p'
 alias gls='git log --stat --summary'
+alias glf='git log --follow --graph --decorate --pretty=format:"%ad [%cn] <c:%h t:%t p:%p> %n %Cgree
+n%d%Creset %s %n" --stat -p'
+
 
 alias dos2unix='fromdos'
 alias unix2dos='todos'
@@ -268,11 +271,11 @@ function gomilkvim () {
 }
 
 function rails_commitlog() {
-  cd /home/yaginuma/program/rails/rails/ && git log | peco
+  cd /home/yaginuma/program/rails/master_y_yagi/rails && git log | peco
 }
 
 function rails_source() {
-  vim $(find /home/yaginuma/program/rails/rails -type f | peco )
+  vim $(find /home/yaginuma/program/rails/master_test/rails -type f | peco )
 }
 
 # added by travis gem

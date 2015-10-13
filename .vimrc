@@ -177,6 +177,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'nixprime/cpsm'
 NeoBundle 'itchyny/calendar.vim'
+NeoBundle 'elixir-lang/vim-elixir'
 call neobundle#end()
 
 
@@ -333,6 +334,7 @@ let g:vimrubocop_config = '/home/yaginuma/work/Qualizm/.rubocop.yml'
 
 " calendar
 let g:calendar_frame = 'default'
+let g:calendar_google_calendar = 1
 set t_Co=256
 
 
