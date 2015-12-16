@@ -178,6 +178,7 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'nixprime/cpsm'
 NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'isRuslan/vim-es6'
 call neobundle#end()
 
 
