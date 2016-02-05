@@ -327,8 +327,7 @@ autocmd FileType go compiler go
 map <Leader>b :CtrlPBuffer<cr>
 let g:ctrlp_match_window_bottom   = 0
 let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_match_func = {'match': 'cpsm#CtrlPMatch'}
-let g:ctrlp_user_command = 'files -p %s'  " use go get github.com/mattn/files
+"let g:ctrlp_user_command = 'files -p %s'  " use go get github.com/mattn/files
 
 " for work
 let g:vimrubocop_config = '/home/yaginuma/work/Qualizm/.rubocop.yml'
