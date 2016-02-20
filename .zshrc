@@ -282,3 +282,6 @@ function rails_source() {
 [ -f /home/yaginuma/.travis/travis.sh ] && source /home/yaginuma/.travis/travis.sh
 
 . /etc/profile.d/vte-2.91.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
