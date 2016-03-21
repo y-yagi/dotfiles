@@ -180,6 +180,8 @@ NeoBundle 'itchyny/calendar.vim'
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'fatih/vim-go'
+NeoBundle 'KabbAmine/zeavim.vim'
+
 call neobundle#end()
 
 
