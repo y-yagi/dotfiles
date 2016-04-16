@@ -266,6 +266,10 @@ function agvim () {
   vim $(ag $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
 }
 
+function multi-agvim () {
+  vim $(multi-ag $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
+}
+
 function gomilkvim () {
   vim $(gomilk -a $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
 }

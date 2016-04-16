@@ -325,6 +325,7 @@ set rtp+=$GOSRC/misc/vim
 exe "set rtp+=".globpath($GOSRC, "src/github.com/nsf/gocode/vim")
 set completeopt=menu,preview
 autocmd FileType go compiler go
+let g:go_fmt_command = "goimports"
 
 " ctrlp
 map <Leader>b :CtrlPBuffer<cr>
