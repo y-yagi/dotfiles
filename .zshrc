@@ -231,6 +231,7 @@ export TEST_CLUSTER_COMMAND="/usr/share/elasticsearch/bin/elasticsearch"
 # export PATH=$GOROOT/bin:$PATH
 # export GOPATH=/home/yaginuma/program/go/go_home
 # export PATH=$GOPATH/bin:$PATH
+export PATH=$PATH:/home/yaginuma/tool/program/go/go_appengine
 
 # peco
 function peco-select-history() {
@@ -269,6 +270,7 @@ function agvim () {
 function multi-agvim () {
   vim $(multi-ag $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
 }
+alias mav='multi-agvim'
 
 function gomilkvim () {
   vim $(gomilk -a $@ | peco --query "$LBUFFER" | awk -F : '{print "-c " $2 " " $1}')
