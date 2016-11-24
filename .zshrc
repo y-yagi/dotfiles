@@ -233,6 +233,9 @@ export TEST_CLUSTER_COMMAND="/usr/share/elasticsearch/bin/elasticsearch"
 # export PATH=$GOPATH/bin:$PATH
 export PATH=$PATH:/home/yaginuma/tool/program/go/go_appengine
 
+# embulk
+export PATH=$HOME/.embulk/bin:$PATH
+
 # peco
 function peco-select-history() {
     local tac
@@ -284,6 +287,11 @@ function rails_source() {
   vim $(find /home/yaginuma/program/rails/master_test/rails -type f | peco )
 }
 
+function lvim() {
+  arrs=(`echo $1 | tr ":" "\n"`)
+  vim -c ${arrs[2]} ${arrs[1]}
+}
+
 # added by travis gem
 [ -f /home/yaginuma/.travis/travis.sh ] && source /home/yaginuma/.travis/travis.sh
 
@@ -291,3 +299,4 @@ function rails_source() {
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
