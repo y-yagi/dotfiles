@@ -363,4 +363,4 @@ filetype on
 filetype indent on
 filetype plugin on
 
-
+let g:quickrun_config = { 'python': { 'command': 'python3' } }
