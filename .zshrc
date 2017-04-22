@@ -212,9 +212,9 @@ limit coredumpsize unlimited
 export R_LIBS=~/Rlib
 
 # Android
-export ANDROID_HOME=/home/yaginuma/tool/program/android-sdk
-export PATH=/home/yaginuma/tool/program/android-sdk/tools/templates/gradle/wrapper:$PATH
-export PATH=/home/yaginuma/tool/program/android-sdk/platform-tools:$PATH
+export ANDROID_HOME=${HOME}/Android/Sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
 
 # nvm
