@@ -292,6 +292,10 @@ function lvim() {
   vim -c ${arrs[2]} ${arrs[1]}
 }
 
+function g() {
+  cd $(goto $1)
+}
+
 # added by travis gem
 [ -f /home/yaginuma/.travis/travis.sh ] && source /home/yaginuma/.travis/travis.sh
 
