@@ -181,6 +181,7 @@ NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'KabbAmine/zeavim.vim'
+NeoBundle 'rust-lang/rust.vim'
 
 call neobundle#end()
 

@@ -170,6 +170,7 @@ eval "$(rbenv init -)"
 
 # gvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+gvm use 1.9
 
 # exenv
 export PATH="$HOME/.exenv/bin:$PATH"
@@ -304,3 +305,7 @@ function g() {
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+export PATH="/home/yaginuma/tool/browser:$PATH"
+
+### for pip
+export PATH="/home/yaginuma/.local/bin:$PATH"
