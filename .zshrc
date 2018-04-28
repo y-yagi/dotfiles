@@ -47,7 +47,7 @@ alias bu='bundle update'
 # git
 alias gs="git status"
 alias gd="git diff"
-alias br="git branch"
+alias br="git branch --sort=committerdate"
 alias ga="git add ."
 alias gh="git help"
 alias gc="git commit -a "

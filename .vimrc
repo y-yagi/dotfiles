@@ -182,6 +182,7 @@ NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'KabbAmine/zeavim.vim'
 NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'prettier/vim-prettier'
 
 call neobundle#end()
 
@@ -341,6 +342,9 @@ let g:vimrubocop_config = '/home/yaginuma/work/Qualizm/.rubocop.yml'
 let g:calendar_frame = 'default'
 let g:calendar_google_calendar = 1
 set t_Co=256
+
+" prettier
+autocmd FileType javascript set formatprg=prettier\ --stdin
 
 
 command! -nargs=1 Gmilk call s:Gmilk("gomilk -a", <f-args>)
