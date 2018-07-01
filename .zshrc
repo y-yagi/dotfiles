@@ -309,3 +309,5 @@ export PATH="/home/yaginuma/tool/browser:$PATH"
 
 ### for pip
 export PATH="/home/yaginuma/.local/bin:$PATH"
+
+[ -f .work ] && source .work
