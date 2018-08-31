@@ -183,6 +183,7 @@ NeoBundle 'fatih/vim-go'
 NeoBundle 'KabbAmine/zeavim.vim'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'prettier/vim-prettier'
+NeoBundle 'leafgarland/typescript-vim'
 
 call neobundle#end()
 
