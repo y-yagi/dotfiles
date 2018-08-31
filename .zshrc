@@ -212,11 +212,6 @@ limit coredumpsize unlimited
 # R
 export R_LIBS=~/Rlib
 
-# Android
-export ANDROID_HOME=${HOME}/Android/Sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-
 
 # nvm
 #[ -s "/home/yaginuma/.nvm/nvm.sh" ] && . "/home/yaginuma/.nvm/nvm.sh" # This loads nvm
