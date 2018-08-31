@@ -170,7 +170,7 @@ eval "$(rbenv init -)"
 
 # gvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-gvm use 1.9
+gvm use 1.11
 
 # exenv
 export PATH="$HOME/.exenv/bin:$PATH"
