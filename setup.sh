@@ -5,6 +5,7 @@ set -e
 # tools
 
 go get -f -u github.com/mattn/memo
+go get -f -u github.com/mattn/mkup
 
 go get -f -u github.com/y-yagi/jpcal
 go get -f -u github.com/y-yagi/jptenki
@@ -15,6 +16,7 @@ go get -f -u github.com/y-yagi/egose
 go get -f -u github.com/y-yagi/goto
 go get -f -u github.com/y-yagi/tomato
 go get -f -u github.com/y-yagi/open-hub
+go get -f -u github.com/y-yagi/github-trending
+go get -f -u github.com/y-yagi/weatherer
 
 go get -f -u github.com/davecheney/httpstat
-
