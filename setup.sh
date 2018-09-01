@@ -18,5 +18,7 @@ go get -f -u github.com/y-yagi/tomato/cmd/tomato
 go get -f -u github.com/y-yagi/open-hub
 go get -f -u github.com/y-yagi/github-trending
 go get -f -u github.com/y-yagi/weatherer/cmd/weatherer
+go get -f -u github.com/y-yagi/measure
+go get -f -u github.com/y-yagi/ags
 
 go get -f -u github.com/davecheney/httpstat
