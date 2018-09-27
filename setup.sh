@@ -3,6 +3,7 @@
 set -e
 
 # tools
+go get -f -u golang.org/x/tools/cmd/goimports
 
 go get -f -u github.com/mattn/memo
 go get -f -u github.com/mattn/mkup
@@ -20,5 +21,6 @@ go get -f -u github.com/y-yagi/github-trending
 go get -f -u github.com/y-yagi/weatherer/cmd/weatherer
 go get -f -u github.com/y-yagi/measure
 go get -f -u github.com/y-yagi/ags
+go get -f -u github.com/y-yagi/bookmarker-go
 
 go get -f -u github.com/davecheney/httpstat
