@@ -22,5 +22,6 @@ go get -f -u github.com/y-yagi/weatherer/cmd/weatherer
 go get -f -u github.com/y-yagi/measure
 go get -f -u github.com/y-yagi/ags
 go get -f -u github.com/y-yagi/bookmarker-go
+go get -f -u github.com/y-yagi/gtodo
 
 go get -f -u github.com/davecheney/httpstat

@@ -306,3 +306,5 @@ export PATH="/home/yaginuma/tool/browser:$PATH"
 export PATH="/home/yaginuma/.local/bin:$PATH"
 
 [ -f .work ] && source .work
+
+once gtodo notify
