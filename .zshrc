@@ -289,7 +289,10 @@ function lvim() {
 }
 
 function g() {
-  cd $(goto $1)
+  local next=(`goto $1`)
+  if [ -n "$next" ]; then
+    cd ${next}
+  fi
 }
 
 # added by travis gem
