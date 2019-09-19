@@ -23,7 +23,6 @@ SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
 # パスの設定
 PATH=/usr/local/bin:/usr/bin:$PATH
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
-export PHANTOMJS_EXECUTABLE=$HOME/./node_modules/casperjs/node_modules/.bin/phantomjs
 export PATH="$HOME/my-exe/:$PATH"
 
 
@@ -170,7 +169,7 @@ eval "$(rbenv init -)"
 
 # gvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-gvm use 1.11
+gvm use 1.13
 
 # exenv
 export PATH="$HOME/.exenv/bin:$PATH"
