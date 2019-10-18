@@ -170,6 +170,7 @@ eval "$(rbenv init -)"
 # gvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 gvm use 1.13
+go env -w GOBIN=/home/yaginuma/gobin
 
 # exenv
 export PATH="$HOME/.exenv/bin:$PATH"
