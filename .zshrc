@@ -170,15 +170,11 @@ eval "$(rbenv init -)"
 # gvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 gvm use 1.13
-go env -w GOBIN=/home/yaginuma/gobin
-
-# exenv
-export PATH="$HOME/.exenv/bin:$PATH"
-eval "$(exenv init -)"
+go env -w GOBIN="$HOME/gobin"
+export PATH="$HOME/gobin:$PATH"
 
 # display
 #xgamma -bgamma 0.87
-
 
 _set_env_git_current_branch() {
   GIT_CURRENT_BRANCH=$( git branch &> /dev/null | grep '^\*' | cut -b 3- )
