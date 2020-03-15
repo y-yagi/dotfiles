@@ -147,9 +147,6 @@ export LS_COLORS='di=01;36'
 # # ファイルリスト補完でもlsと同様に色をつける｡
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 #
-# # cd をしたときにlsを実行する
-function chpwd() { ls }
-#
 # # ディレクトリ名だけで､ディレクトリの移動をする｡
 setopt auto_cd
 #
@@ -187,6 +184,14 @@ _update_rprompt () {
   fi
 }
 
+_change_go_version() {
+  if [ -f ".go-version" ]; then
+    local version=(`cat .go-version`)
+    gvm use ${version}
+  fi
+  echo "change gvm"
+}
+
 precmd()
 {
   _set_env_git_current_branch
@@ -197,6 +202,8 @@ chpwd()
 {
   _set_env_git_current_branch
   _update_rprompt
+  _change_go_version
+  ls
 }
 
 export JSTESTDRIVER_HOME=~/tool/program/javascript/jstestdriver
