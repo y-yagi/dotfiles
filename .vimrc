@@ -320,7 +320,7 @@ let g:vimfiler_safe_mode_by_default = 0
 
 :command! OpenTempfile :edit `=tempname()`
 
-" delete space
+" delete space / remove space
 autocmd BufWritePre * :%s/\s\+$//ge
 
 autocmd BufRead,BufNewFile *.md  setfiletype markdown

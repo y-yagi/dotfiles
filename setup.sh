@@ -25,5 +25,6 @@ go get -f -u github.com/y-yagi/gtodo
 go get -f -u github.com/y-yagi/once
 go get -f -u github.com/y-yagi/eijiro/cmd/eijiro
 go get -f -u github.com/y-yagi/gtodo/cmd/gtodo
+go get -f -u github.com/y-yagi/takolog
 
 go get -f -u github.com/davecheney/httpstat

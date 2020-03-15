@@ -48,7 +48,6 @@ alias gs="git status"
 alias gd="git diff"
 alias br="git branch --sort=committerdate"
 alias ga="git add ."
-alias gh="git help"
 alias gc="git commit -a "
 alias ch="git checkout"
 alias gpl="git pull"
@@ -210,9 +209,8 @@ export R_LIBS=~/Rlib
 
 
 # nvm
-#[ -s "/home/yaginuma/.nvm/nvm.sh" ] && . "/home/yaginuma/.nvm/nvm.sh" # This loads nvm
-#nvm use 0.10
-#export PATH="/home/yaginuma/node_modules/.bin:$PATH"
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # elasticsearch
 export PATH="/usr/share/elasticsearch/bin/":$PATH
@@ -272,7 +270,7 @@ function gomilkvim () {
 }
 
 function rails_commitlog() {
-  cd /home/yaginuma/program/rails/master_y_yagi/rails && git log | peco
+  cd /home/y-yagi/src/github.com/rails/rails && git log | peco
 }
 
 function rails_source() {
