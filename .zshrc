@@ -186,7 +186,7 @@ _update_rprompt () {
 
 _change_go_version() {
   if [ -f "go.mod" ]; then
-    local version=(`grep -Po "^go \K([0-9\.]*)" go.mod`)
+    local version=(`grep -Po "^go \K([0-9\.]*)$" go.mod`)
     gvm use ${version}
   fi
 }
