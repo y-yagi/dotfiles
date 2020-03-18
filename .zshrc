@@ -163,12 +163,6 @@ gvim(){ /usr/bin/gvim -f "$@" & true; }
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# gvm
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-gvm use 1.13
-go env -w GOBIN="$HOME/gobin"
-export PATH="$HOME/gobin:$PATH"
-
 # display
 #xgamma -bgamma 0.87
 
@@ -213,6 +207,12 @@ limit coredumpsize unlimited
 # R
 export R_LIBS=~/Rlib
 
+# gvm
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+gvm use 1.13
+_change_go_version
+go env -w GOBIN="$HOME/gobin"
+export PATH="$HOME/gobin:$PATH"
 
 # nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
