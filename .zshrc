@@ -312,4 +312,6 @@ export PATH="/home/yaginuma/.local/bin:$PATH"
 
 [ -f .work ] && source .work
 
+alias py=python3
+
 once gtodo notify
