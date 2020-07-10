@@ -186,6 +186,7 @@ NeoBundle 'prettier/vim-prettier'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'posva/vim-vue'
 NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'cespare/vim-toml'
 
 call neobundle#end()
 
