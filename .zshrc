@@ -297,6 +297,11 @@ function g() {
   fi
 }
 
+function rewrite() {
+  `git grep -l $1 | xargs sed -i '' -e "s/$1/$2/g"`
+}
+
+
 # added by travis gem
 [ -f /home/yaginuma/.travis/travis.sh ] && source /home/yaginuma/.travis/travis.sh
 
@@ -313,5 +318,8 @@ export PATH="/home/yaginuma/.local/bin:$PATH"
 [ -f .work ] && source .work
 
 alias py=python3
+
+export ENCORE_INSTALL="/home/y-yagi/.encore"
+export PATH="$ENCORE_INSTALL/bin:$PATH"
 
 once gtodo notify
