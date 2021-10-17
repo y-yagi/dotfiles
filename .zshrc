@@ -32,6 +32,7 @@ find-grep () { find . -type f -print | xargs grep -n --binary-files=without-matc
 # alias
 alias ls='ls -G --color -a'
 alias ll='ls -ltr'
+alias exa='exa -a'
 #alias vi='vim'
 #alias gd='dirs -v; echo -n "select number: "; read newdir; cd +"$newdir"'
 alias c='clear'
@@ -216,10 +217,6 @@ _change_go_version
 go env -w GOBIN="$HOME/gobin"
 export PATH="$HOME/gobin:$PATH"
 
-# nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 # elasticsearch
 export PATH="/usr/share/elasticsearch/bin/":$PATH
 export TEST_CLUSTER_COMMAND="/usr/share/elasticsearch/bin/elasticsearch"
@@ -321,5 +318,8 @@ alias py=python3
 
 export ENCORE_INSTALL="/home/y-yagi/.encore"
 export PATH="$ENCORE_INSTALL/bin:$PATH"
+export PATH="/home/y-yagi/.deno/bin/:$PATH"
 
 once gtodo notify
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
