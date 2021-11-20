@@ -211,7 +211,7 @@ export R_LIBS=~/Rlib
 # gvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 if [ ! -f "go.mod" ]; then
-  gvm use 1.16
+  gvm use 1.17
 fi
 _change_go_version
 go env -w GOBIN="$HOME/gobin"
