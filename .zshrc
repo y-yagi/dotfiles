@@ -47,6 +47,7 @@ alias bu='bundle update'
 # git
 alias gs="git status"
 alias gd="git diff"
+alias gdn="git diff --name-only"
 alias br="git branch --sort=committerdate"
 alias ga="git add ."
 alias gc="git commit -a "
@@ -64,6 +65,9 @@ n%d%Creset %s %n" --stat -p'
 
 alias dos2unix='fromdos'
 alias unix2dos='todos'
+
+# for work
+alias drun='docker-compose run --rm app'
 
 #
 # # プロンプトの設定
@@ -211,7 +215,7 @@ export R_LIBS=~/Rlib
 # gvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 if [ ! -f "go.mod" ]; then
-  gvm use 1.17
+  gvm use 1.18
 fi
 _change_go_version
 go env -w GOBIN="$HOME/gobin"
