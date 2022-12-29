@@ -215,7 +215,7 @@ export R_LIBS=~/Rlib
 # gvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 if [ ! -f "go.mod" ]; then
-  gvm use 1.18
+  gvm use 1.19
 fi
 _change_go_version
 go env -w GOBIN="$HOME/gobin"
@@ -303,9 +303,6 @@ function rewrite() {
 }
 
 
-# added by travis gem
-[ -f /home/yaginuma/.travis/travis.sh ] && source /home/yaginuma/.travis/travis.sh
-
 . /etc/profile.d/vte-2.91.sh
 
 ### Added by the Heroku Toolbelt
@@ -327,3 +324,4 @@ export PATH="/home/y-yagi/.deno/bin/:$PATH"
 once gtodo notify
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$HOME/.nodenv/bin:$PATH"
