@@ -200,7 +200,7 @@ chpwd()
 {
   _set_env_git_current_branch
   _update_rprompt
-  _change_go_version
+  # _change_go_version
   ls
 }
 
@@ -215,7 +215,7 @@ export R_LIBS=~/Rlib
 # gvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 if [ ! -f "go.mod" ]; then
-  gvm use 1.21
+  gvm use 1.23
 fi
 _change_go_version
 go env -w GOBIN="$HOME/gobin"
@@ -325,3 +325,7 @@ once gtodo notify
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
