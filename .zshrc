@@ -23,7 +23,7 @@ SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
 # パスの設定
 PATH=/usr/local/bin:/usr/bin:$PATH
 export MANPATH=/usr/local/share/man:/usr/local/man:/usr/share/man
-export PATH="$HOME/my-exe/:$PATH"
+export PATH="$HOME/mybin/:$PATH"
 
 
 # 関数
@@ -183,13 +183,6 @@ _update_rprompt () {
   fi
 }
 
-_change_go_version() {
-  if [ -f "go.mod" ]; then
-    local version=(`grep -Po "^go \K([0-9\.]*)$" go.mod`)
-    gvm use ${version}
-  fi
-}
-
 precmd()
 {
   _set_env_git_current_branch
@@ -212,15 +205,6 @@ limit coredumpsize unlimited
 # R
 export R_LIBS=~/Rlib
 
-# gvm
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-if [ ! -f "go.mod" ]; then
-  gvm use 1.23
-fi
-_change_go_version
-go env -w GOBIN="$HOME/gobin"
-export PATH="$HOME/gobin:$PATH"
-
 # elasticsearch
 export PATH="/usr/share/elasticsearch/bin/":$PATH
 export TEST_CLUSTER_COMMAND="/usr/share/elasticsearch/bin/elasticsearch"
@@ -235,6 +219,7 @@ export PATH=$PATH:/home/yaginuma/tool/program/go/go_appengine
 # embulk
 export PATH=$HOME/.embulk/bin:$PATH
 
+alias peco="TERM=screen peco"
 # peco
 function peco-select-history() {
     local tac
@@ -321,7 +306,7 @@ export ENCORE_INSTALL="/home/y-yagi/.encore"
 export PATH="$ENCORE_INSTALL/bin:$PATH"
 export PATH="/home/y-yagi/.deno/bin/:$PATH"
 
-once gtodo notify
+#once gtodo notify
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
@@ -329,3 +314,5 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 export WASMTIME_HOME="$HOME/.wasmtime"
 
 export PATH="$WASMTIME_HOME/bin:$PATH"
+eval "$(/home/y-yagi/.local/bin/mise activate zsh)"
+eval "$(zoxide init zsh)"

@@ -3,28 +3,27 @@
 set -e
 
 # tools
-go get -f -u golang.org/x/tools/cmd/goimports
+obt mattn/memo
 
-go get -f -u github.com/mattn/memo
-go get -f -u github.com/mattn/mkup
+obt y-yagi/jpcal
+# obt y-yagi/blogrep
+# obt y-yagi/multi-ag
+go install github.com/y-yagi/goto@latest
+go install github.com/y-yagi/tomato/cmd/tomato@latest
+go install github.com/y-yagi/open-hub@latest
+go install github.com/y-yagi/measure@latest
+go install github.com/y-yagi/ags@latest
+go install github.com/y-yagi/gtodo/cmd/gtodo@latest
+go install github.com/y-yagi/once@latest
+go install github.com/y-yagi/eijiro/cmd/eijiro@latest
+go install github.com/y-yagi/gtodo/cmd/gtodo@latest
+go install github.com/y-yagi/fork@latest
 
-go get -f -u github.com/y-yagi/jpcal
-go get -f -u github.com/y-yagi/jptenki
-go get -f -u github.com/y-yagi/myrepo
-go get -f -u github.com/y-yagi/blogrep
-go get -f -u github.com/y-yagi/multi-ag
-go get -f -u github.com/y-yagi/egose
-go get -f -u github.com/y-yagi/goto
-go get -f -u github.com/y-yagi/tomato/cmd/tomato
-go get -f -u github.com/y-yagi/open-hub
-go get -f -u github.com/y-yagi/github-trending
-go get -f -u github.com/y-yagi/measure
-go get -f -u github.com/y-yagi/ags
-go get -f -u github.com/y-yagi/bookmarker-go/cmd/bookmarker
-go get -f -u github.com/y-yagi/gtodo
-go get -f -u github.com/y-yagi/once
-go get -f -u github.com/y-yagi/eijiro/cmd/eijiro
-go get -f -u github.com/y-yagi/gtodo/cmd/gtodo
-go get -f -u github.com/y-yagi/takolog
+# obt davecheney/httpstat
+obt ajeetdsouza/zoxide
+obt sharkdp/fd
 
-go get -f -u github.com/davecheney/httpstat
+sudo apt install snapd
+sudo snap install btop
+
+obt suzuki-shunsuke/pinact
